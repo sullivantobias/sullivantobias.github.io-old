@@ -1,0 +1,29 @@
+@import "../../../Commons/colors";
+@import "../../../Commons/breakpoints";
+
+.cmp-backToTop {
+    font-size: 25px;
+    transform: translateX(100px);
+    background-color: $metallic-seaweed;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $honeydrew;
+    transition: all 0.4s;
+
+    &.visible {
+        transform: translateX(0);
+    }
+
+    .component {
+        margin: 0;
+    }
+}

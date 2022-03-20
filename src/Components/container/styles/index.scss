@@ -1,0 +1,29 @@
+.cmp-container,
+.cmp-container__withTransition {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cmp-container__withTransition {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 1s, opacity 1s ease-in-out;
+
+    &.scale {
+        transform: scale(0);
+    }
+
+    &.opacity {
+        opacity: 0;
+    }
+
+    &.leftToRight {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    &.rightToLeft {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+}

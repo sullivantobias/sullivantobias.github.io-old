@@ -1,0 +1,330 @@
+@import "../../../Commons/colors";
+@import "../../../Commons/breakpoints";
+
+@import "utils";
+
+.structure-more {
+    display: flex;
+
+    &__wrapper {
+        flex-basis: 100%;
+
+        .leftPanel {
+            @include small {
+                border-right: 1px solid;
+            }
+        }
+
+        .rightPanel {
+            overflow-x: hidden;
+
+            .cmp-container__withTransition {
+                .component {
+                    margin: 20px 0;
+                }
+
+            }
+        }
+
+        .mentions,
+        .contact-title {
+            text-align: left;
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+
+        .contact-title {
+            margin: 0 20px 0 0;
+        }
+
+        .games,
+        .challenge,
+        .extra {
+            text-align: left;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 1.8px;
+        }
+
+        .cmp-container__withTransition {
+            justify-content: left;
+            align-items: center;
+            font-weight: bold;
+
+            .component {
+                margin: 0 20px 0 0;
+            }
+
+            .aiDungeon,
+            .nethack,
+            .hackerrank,
+            .geoguessr,
+            .astronomy,
+            .blockchain,
+            .reading,
+            .music {
+                background-color: lighten($honeydrew, 2%);
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-style: italic;
+            }
+
+            .aiDungeon {
+                color: $aiDungeon;
+            }
+
+            .geoguessr {
+                color: $geoguessr;
+            }
+
+            .hackerrank {
+                color: $hackerrank;
+            }
+        }
+    }
+
+    .section-title {
+        flex-basis: 100%;
+
+        .cmp-title {
+            text-align: left;
+        }
+    }
+
+    .underline {
+        margin: 0;
+    }
+
+    .contact-area {
+        position: relative;
+        justify-content: left;
+
+        >div {
+            justify-content: left;
+        }
+
+        .contact {
+            section {
+                width: 100%;
+                border-radius: 5px;
+                float: left;
+                background-color: $cadet;
+
+                .content {
+                    padding: 20px 30px 50px 30px;
+                    position: relative;
+                    text-align: center;
+
+                    img {
+                        width: 140px;
+                        border: 1px solid;
+                    }
+
+                    aside {
+                        float: left;
+                        width: 100%;
+                        color: $honeydrew;
+
+                        .cmp-text {
+                            text-align: center;
+                        }
+
+                        h1 {
+                            font-size: 22px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+
+            .title {
+                width: 100%;
+                background-color: $richBlack;
+                max-height: 0;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                overflow: hidden;
+                @include transition(all .55s);
+
+                &.active {
+                    max-height: 50px;
+                    @include transition(all 1.3s);
+
+                    p {
+                        @include transform(scale(1));
+                        transition-delay: .2s;
+                    }
+                }
+
+                p {
+                    padding: 0 30px;
+                    color: white;
+                    text-transform: uppercase;
+                    letter-spacing: .5px;
+                    @include transition(all .3s);
+                    @include transform(scale(0));
+                }
+            }
+
+            button {
+                position: absolute;
+                bottom: 0;
+                right: 50%;
+                background-color: $prussian-blue;
+                color: $honeydrew;
+                border: 0;
+                width: 200px;
+                height: 48px;
+                border-radius: 5px;
+                font-size: 16px;
+                letter-spacing: .5px;
+                text-transform: uppercase;
+                margin-bottom: -24px;
+                margin-right: -100px;
+                transition: all 0.4s;
+                transition-delay: .1s;
+                outline: none;
+                cursor: pointer;
+                z-index: 10;
+
+
+                span {
+                    opacity: 1;
+                    @include transition(opacity .2s);
+                    transition-delay: .4s;
+                }
+
+                svg {
+                    position: absolute;
+                    top: 100%;
+                    @include transform(translate(-50%, -50%));
+                    opacity: 0;
+                    @include transition(all .4s);
+
+                    path {
+                        fill: $honeydrew;
+                    }
+                }
+
+                &.active {
+                    margin-right: 0;
+                    bottom: -40px;
+                    right: 10px;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 30px;
+                    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+
+                    span {
+                        opacity: 0;
+                        transition-delay: 0s;
+                        font-size: 0;
+                    }
+
+                    svg {
+                        opacity: 1;
+                        top: 50%;
+                        left: 50%;
+                        transition-delay: .5s;
+                    }
+                }
+            }
+        }
+
+        nav {
+            width: 100%;
+            overflow: hidden;
+            max-height: 0;
+            @include transition(all .5s);
+
+            &.active {
+                max-height: 600px;
+                @include transition(all 1s);
+
+                a {
+                    opacity: 1;
+                    @include transform(translateY(0px));
+                    @include transition(all .7s);
+
+                    &:nth-of-type(1) {
+                        transition-delay: .5s;
+                    }
+
+                    &:nth-of-type(2) {
+                        transition-delay: .7s;
+                    }
+
+                    &:nth-of-type(3) {
+                        transition-delay: .9s;
+                    }
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 20px;
+                background-color: #000;
+                color: $honeydrew;
+                padding: 18px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                @include transition(all .3s);
+                opacity: 0;
+                @include transform(translateY(-10px));
+                position: relative;
+
+                @include extra-small {
+                    font-size: 14px;
+                }
+
+                .component {
+                    margin: 0;
+
+                    .cmp-text {
+                        margin: 0;
+                    }
+                }
+
+                svg {
+                    font-size: 30px;
+
+                    @include extra-small {
+                        font-size: 25px;
+                    }
+                }
+
+                &.linkedIn {
+                    svg {
+                        color: $linkedin;
+                    }
+                }
+
+                &.github {
+                    svg {
+                        color: $honeydrew;
+                    }
+                }
+
+                &.gmail {
+                    svg {
+                        color: $gmail;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#more {
+    .section-title {
+        color: $powder-blue;
+
+        .underline {
+            background-color: $powder-blue;
+        }
+    }
+}

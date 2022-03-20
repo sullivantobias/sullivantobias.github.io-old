@@ -1,0 +1,38 @@
+@import "../../../Commons/colors";
+
+@keyframes bcTrans {
+  0% {
+    background-color: $prussian-blue
+  }
+
+  50% {
+    background-color: $steel-blue
+  }
+
+  100% {
+    background-color: $prussian-blue
+  }
+}
+
+.structure-header {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: bcTrans 7s infinite;
+  animation: bcTrans 7s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+
+  &__wrapper {
+    .cmp-title {
+      color: $honeydrew;
+    }
+
+    .cmp-button {
+      width: fit-content;
+      margin: auto;
+    }
+  }
+}

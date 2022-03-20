@@ -1,0 +1,64 @@
+@import "../../../Commons/breakpoints";
+@import "../../../Commons/colors";
+
+.structure-about {
+    .component:first-child {
+        .cmp-title {
+            text-align: left;
+        }
+
+        .underline {
+            margin: 0;
+        }
+    }
+
+    .description {
+        padding: 0 50px;
+
+        @include medium {
+            padding: 0 100px;
+        }
+    }
+
+    .html {
+        color: $html;
+    }
+
+    .js {
+        color: $js;
+    }
+
+    .css {
+        color: $css;
+    }
+
+    .react {
+        color: $react;
+    }
+
+    .node {
+        color: $node;
+    }
+
+    .apple {
+        color: $apple;
+    }
+
+    .jest {
+        color: #79b360;
+        font-size: 36px;
+        font-weight: bold;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .icon {
+        font-size: 80px;
+    }
+
+    .skillsTitle {
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,64 @@
+@import "../../../Commons/colors";
+@import "../../../Commons/breakpoints";
+
+.cmp-skillBars {
+    transition: all 1s;
+
+    &.hidden {
+        transform: scale(0);
+    }
+
+    &__wrapper {
+        position: relative;
+        background-color: #eee;
+        height: 35px;
+        margin: 10px 0;
+        border: 2px solid $cadet;
+        font-size: 12px;
+
+        @include small {
+            font-size: 14px;
+        }
+
+        &--type {
+            position: absolute;
+            display: flex;
+            height: 31px;
+            color: $honeydrew;
+            align-items: center;
+            z-index: 1;
+            width: 85px;
+            background-color: black;
+            justify-content: center;
+
+            .cmp-text-icon {
+                svg {
+                    font-size: 24px;
+                }
+            }
+
+            @include small {
+                width: 100px;
+            }
+        }
+
+        &--bar {
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            background-color: $metallic-seaweed;
+            height: 31px;
+            transition: width 1s ease-in-out;
+
+            &.hidden {
+                width: 0 !important;
+            }
+
+            &--percentage {
+                color: white;
+                padding-right: 15px;
+                font-weight: bold;
+            }
+        }
+    }
+}

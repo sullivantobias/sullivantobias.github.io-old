@@ -1,0 +1,69 @@
+@import "../../../Commons/colors";
+@import "../../../Commons/breakpoints";
+
+.cmp-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .card {
+        position: relative;
+        display: flex;
+        width: 280px;
+        height: 280px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.4s;
+        color: $honeydrew;
+        margin: 10px;
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.75);
+
+        @include extra-small {
+            width: 220px;
+            height: 220px;
+        }
+
+        .card_image {
+            .component {
+                margin: 0;
+            }
+
+            img {
+                width: 280px;
+                height: 280px;
+                object-fit: cover;
+
+                @include extra-small {
+                    width: 220px;
+                    height: 220px;
+                }
+            }
+
+            .cmp-text {
+                @include extra-small {
+                    font-size: 12px;
+                }
+
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            .title {
+                margin: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 20px;
+                font-weight: bold;
+
+                @include extra-small {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &:hover {
+            transform: scale(0.9, 0.9);
+        }
+    }
+}

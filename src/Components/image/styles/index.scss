@@ -1,0 +1,10 @@
+@import "../../../Commons/colors";
+
+.cmp-image {
+    text-align: center;
+
+    img {
+        border-radius: 5px;
+        border: 3px solid $cadet;
+    }
+}

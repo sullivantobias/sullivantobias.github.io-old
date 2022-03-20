@@ -1,0 +1,13 @@
+@import "../../../Commons/colors";
+@import "../../../Commons/breakpoints";
+
+.structure-projects {
+    background: linear-gradient(rgb(9, 76, 114) 0%, rgb(1, 41, 63) 100%);
+    display: flex;
+    position: relative;
+
+    &__wrapper {
+        width: 100%;
+    }
+
+}

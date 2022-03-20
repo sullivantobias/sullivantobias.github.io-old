@@ -1,0 +1,11 @@
+@import "../../../Commons/colors";
+
+.structure-footer {
+    background-color: $richBlack;
+    color: $honeydrew;
+    padding: 0;
+
+    .cmp-text {
+        text-align: center;
+    }
+}

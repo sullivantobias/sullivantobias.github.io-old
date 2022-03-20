@@ -1,0 +1,56 @@
+@import "../../../Commons/colors";
+@import "../../../Commons/breakpoints";
+
+.cmp-button {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  color: $honeydrew;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: all 0.3s;
+
+  span {
+    text-transform: uppercase;
+    transition: all 0.3s;
+    z-index: 1;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  &:before {
+    left: 4px;
+    opacity: 0;
+    background: $imperial-red;
+    transform: scale(0.1, 1);
+  }
+
+  &:after {
+    transition: all 0.3s;
+    border: 2px solid $imperial-red;
+  }
+
+  @include medium {
+    &:hover {
+      &:before {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+      &:after {
+        transform: scale(1, .1);
+        opacity: 0;
+      }
+    }
+  }
+}
